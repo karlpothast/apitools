@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>API Tools</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>  
+<body>
+  <div class="divHeader">
+    <span id="spanAPIUtilitiesTitle" class="title textfx1">
+      API Tools
+    </span>
+  </div>
+  <div class="divContainer">
+    <table width="90%">
+      <tr>
+        <td colspan="3">
+          <label for="txtApiReqUrl" id="lblApiReqUrl" class="label1">API Request URL</label>
+          <input type="text" id="txtApiReqUrl" class="txtLong">
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">
+          <div id="tabs" class="tabs">
+            <table>
+              <tr>
+                <td>
+                  <div class="tab" id="tab1">
+                    <button class="btnTab">Ex Response</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="tab" id="tab2">
+                    <button class="btnTab">Schema</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="tab" id="tab3">
+                    <button class="btnTab">Manual</button>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="tabsContent" class="tabsContent">
+            <div id="divContent1" class="divContent">
+              <label for="textareaApiExpResp" class="label1"></label>
+              <textarea id="textareaApiExpResp" class="textarea2" rows="5" cols="33" placeholder="Response Body (JSON)" spellcheck="false"></textarea>
+            </div>
+            <div id="divContent2" class="divContent">
+              <label for="textareaAPISchema" class="label1"></label>
+              <textarea id="textareaAPISchema" class="textarea1" rows="5" cols="33" spellcheck="false"></textarea>
+            </div>
+            <div id="divContent3" class="divContent">
+              <label for="textareaManual" class="label1"></label>
+              <textarea id="textareaManual" class="textarea1" rows="5" cols="33" spellcheck="false"></textarea>
+            </div>
+          </div>
+        </td>
+        <td align="left" valign="top"> 
+          <div class="div2">
+            <table>
+              <tr>
+                <td>
+                  <label id="lblApiType" for="selectApiType" class="label2">API Method Type</label>
+                </td>
+                <td>
+                  <select id="selectApiType"> 
+                    <option></option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label id="lblEntity" for="txtEntity" class="label2">Entity</label>              
+                </td>
+                <td>
+                  <input id="txtEntity" type="text" class="txt1"></input>
+                </td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td> <button id="btnGenerate" class="styled">Generate Code</button></td>
+                <td>
+                  &nbsp;
+                  <img id="imgErr" src="images/err.png"  style="visibility:hidden" />
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <span id="spanErrMsg" class="errMsg"></span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+    <div id="divResultsFetch" class="divResultsFetch">
+      <table>
+        <tr>
+          <td>
+            <button id="btnClearGeneratedCode" class="button2">Clear</button>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <td>
+            <button onclick=copyGeneratedCode() class="button2">Copy </button>
+          </td>
+          <td>
+            <label id="lblMsg" style="color:blue"></label>
+          </td>
+        </tr>
+      </table>
+      <pre id="preOutput"></pre>
+    </div>
+  </div>
+  <!-- <div id="divResults" class="divResults"> -->
+  <!-- </div> -->
+  <script src="./index.js"></script>
+</body>
+</html>
+
